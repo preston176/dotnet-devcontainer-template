@@ -1,0 +1,8 @@
+{
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0-alpine",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-dotnettools.csharp"]
+    }
+  }
+}
