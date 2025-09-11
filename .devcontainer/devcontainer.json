@@ -1,8 +1,12 @@
 {
-  "image": "mcr.microsoft.com/dotnet/sdk:9.0-alpine",
+  // Use the standard .NET SDK image which includes the .NET SDK and common runtimes.
+  // Note: Windows Desktop runtimes (Microsoft.WindowsDesktop.App) are not available on Linux containers.
+  "image": "mcr.microsoft.com/dotnet/sdk:9.0",
   "customizations": {
     "vscode": {
       "extensions": ["ms-dotnettools.csharp"]
     }
-  }
+  },
+  // After creating the container, show installed SDKs and runtimes for verification.
+  "postCreateCommand": "dotnet --list-sdks && dotnet --list-runtimes"
 }
